@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="http://rdfsharp.codeplex.com/default_graph#">
+  <rdf:Description rdf:about="http://moma.org/artists/10013">
+    <skos:educatedIn rdf:resource="http://vocab.getty.edu/tgn/7003712" />
+    <foaf:name>Hall China Co., East Liverpool, OH</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/141">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Emilio Ambasz</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/22884">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Andrew Zago</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/2964">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7013905" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Louis I. Kahn</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/29711">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Morphosis, Santa Monica, CA</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/3091">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7013905" />
+    <foaf:name>Frederick Kiesler</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/3250">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <skos:educatedIn rdf:resource="http://vocab.getty.edu/tgn/7011781" />
+    <foaf:name>Leon Krier</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/3308">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7011781" />
+    <foaf:name>Masayuki Kurokawa</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/3381">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Ernesto Bruno La Padula</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/3910">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7009546" />
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7011781" />
+    <skos:educatedIn rdf:resource="http://vocab.getty.edu/tgn/7011781" />
+    <foaf:name>Richard Meier</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/47">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Raimund Abraham</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/5103">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Eero Saarinen</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/6459">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7013547" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Frank Lloyd Wright</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/6556">
+    <skos:educatedIn rdf:resource="http://vocab.getty.edu/tgn/7003712" />
+    <foaf:name>Eva Zeisel</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/6953">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7014456" />
+    <foaf:name>Zaha Hadid</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/696">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7010171" />
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Mario Botta</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/6968">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Santiago Calatrava</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/7055">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/2091433" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7002443" />
+    <foaf:name>Tadao Ando</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/7166">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Ludwig Mies van der Rohe</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/7229">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Rafael Viñoly</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/7661">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Aldo Rossi</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/7992">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7013445" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Simon Ungers</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/8157">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Giovanni Guerrini</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/8158">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Mario Romano</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/8218">
+    <skos:activeIn rdf:resource="http://vocab.getty.edu/tgn/7012974" />
+    <foaf:name>Thom Mayne</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/8248">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7013445" />
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7007567" />
+    <foaf:name>Thomas Kinslow</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://moma.org/artists/9029">
+    <skos:livedIn rdf:resource="http://vocab.getty.edu/tgn/7011781" />
+    <foaf:name>Fuso Gomu Ind. Co., Ltd., Tokyo</foaf:name>
+    <rdf:type rdf:resource="http://purl.org/dc/elements/1.1/creatorcreator" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/2091433">
+    <foaf:name>North Wales</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7002443">
+    <foaf:name>Wales</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7003712">
+    <foaf:name>Berlin</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7007567">
+    <foaf:name>New York</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7009546">
+    <foaf:name>Edinburgh</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7010171">
+    <foaf:name>Kiyev</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7011781">
+    <foaf:name>London</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7012974">
+    <foaf:name>Moskva</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7013445">
+    <foaf:name>Boston</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7013547">
+    <foaf:name>Detroit</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7013905">
+    <foaf:name>Long Beach</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vocab.getty.edu/tgn/7014456">
+    <foaf:name>San Francisco</foaf:name>
+    <rdf:type rdf:resource="http://vocab.getty.edu/tgn/tgn" />
+  </rdf:Description>
+</rdf:RDF>
