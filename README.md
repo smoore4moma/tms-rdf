@@ -1,0 +1,15 @@
+# tms-rdf
+The Museum System RDF 
+
+This is an example of creating and consuming RDF data sourced from The Museum System (TMS).
+
+The example relies heavily on the open source project from Marco Desalvo, RDFSharp.
+
+https://rdfsharp.codeplex.com  or https://github.com/mdesalvo/RDFSharp
+
+The project shows how to create RDF resources using SQL queries against the TMS database, and then write the RDF equivalent to a SQL Server database.
+You can also see how to create Sparql queries to select the data from the database and show it on a datagrid on a web page.  It should look like this:
+
+INSERT IMAGE
+
+The idea is not to build a full application or "RDFify" TMS.  The intent is go beyond the theoretical discussions of RDF and apply it to a real-World example, mainly in order to understand the complexities involved, as well as the strengths and limitations of cultural institutions' data and vocabularies. 
