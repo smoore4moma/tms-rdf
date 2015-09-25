@@ -3,7 +3,7 @@ The Museum System RDF
 
 This is an example of creating and consuming RDF data sourced from The Museum System (TMS).
 
-The example relies heavily on the open source project from Marco Desalvo, RDFSharp.
+The example relies heavily on the open source project from Marco De Salvo, RDFSharp.
 
 https://rdfsharp.codeplex.com  or https://github.com/mdesalvo/RDFSharp
 
