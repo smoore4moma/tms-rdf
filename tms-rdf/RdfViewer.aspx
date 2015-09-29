@@ -27,7 +27,7 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="GO" />
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Label" Width="600px"></asp:Label>
         <br />
         <br />
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">

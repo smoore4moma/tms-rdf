@@ -39,23 +39,23 @@ namespace tms_rdf
             {
 
                 // First we set some core RDF resources
+                // agent refers to artist(s)
                 RDFResource type = RDFVocabulary.RDF.TYPE;
                 RDFResource name = RDFVocabulary.FOAF.NAME;
-
-                // Ideally this would reference the Getty vocabulary for ULAN but we don't have the ULAN ID stored in the db
-                // Use standard dc terms like creator instead of "artist"
-                RDFResource creator = new RDFResource(RDFVocabulary.DC.CREATOR + "creator");
+                RDFResource agent = RDFVocabulary.FOAF.AGENT;
 
                 // TGN is a Getty vocabulary for locations
                 // TGN added to RDFSharp vocabularies manually.  TGN ID is stored in TMSThes (or equivalent in TMS 2014+)
-                RDFResource tgn = new RDFResource(RDFVocabulary.TGN.BASE_URI + "tgn");
+                RDFResource tgn = new RDFResource(RDFVocabulary.TGN.BASE_URI);
 
                 // The predicates below are often part of ULAN (which we don't have)
-                RDFResource livedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "livedIn");
-                RDFResource activeIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "activeIn");
-                RDFResource educatedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "educatedIn");
-                RDFResource bornIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "bornIn");
-                RDFResource diedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "diedIn");
+                // unsure if using bio events this way is acceptable...
+
+                RDFResource livedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/livedIn");
+                RDFResource activeIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/activeIn");
+                RDFResource educatedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/educatedIn");
+                RDFResource bornIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/bornIn");
+                RDFResource diedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/diedIn");
 
                 RDFResource anUri = new RDFResource("http://example.org/uris#anUri");
 
@@ -123,62 +123,63 @@ namespace tms_rdf
         protected void LoadRDF()
         {
 
-            //// First we set some core RDF resources
+            // First we set some core RDF resources
+            // agent refers to artist(s)
             RDFResource type = RDFVocabulary.RDF.TYPE;
             RDFResource name = RDFVocabulary.FOAF.NAME;
-
-            // Ideally this would reference the Getty vocabulary for ULAN but we don't have the ULAN ID stored in the db
-            // Use standard dc terms like creator instead of "artist"
-            RDFResource creator = new RDFResource(RDFVocabulary.DC.CREATOR + "creator");
+            RDFResource agent = RDFVocabulary.FOAF.AGENT;
 
             // TGN is a Getty vocabulary for locations
             // TGN added to RDFSharp vocabularies manually.  TGN ID is stored in TMSThes (or equivalent in TMS 2014+)
-            RDFResource tgn = new RDFResource(RDFVocabulary.TGN.BASE_URI + "tgn");
+            RDFResource tgn = new RDFResource(RDFVocabulary.TGN.BASE_URI);
 
             // The predicates below are often part of ULAN (which we don't have)
-            RDFResource livedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "livedIn");
-            RDFResource activeIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "activeIn");
-            RDFResource educatedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "educatedIn");
-            RDFResource bornIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "bornIn");
-            RDFResource diedIn = new RDFResource(RDFVocabulary.SKOS.BASE_URI + "diedIn");
+            // unsure if using bio events this way is acceptable...
+
+            RDFResource livedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/livedIn");
+            RDFResource activeIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/activeIn");
+            RDFResource educatedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/educatedIn");
+            RDFResource bornIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/bornIn");
+            RDFResource diedIn = new RDFResource("http://purl.org/vocab/bio/0.1/event/diedIn");
 
             RDFResource anUri = new RDFResource("http://example.org/uris#anUri");
+
 
             // The following entries are all generated from SQL queries which you can find in the file SQL.txt  Technically we could load them into the database directly,
             // but this allows us to see how a resource is "built" and it creates the correct RDF format files (NTriples, RdfXml, TriX), as well as inserts into the db.
             // Once in the db, we do not need to run LoadRDF() except to refresh data.
 
-            #region Artists (creators)
+            #region Artists (agents)
+            // Ideally this would reference the Getty vocabulary for ULAN but we don't have the ULAN ID stored in the db
+            RDFResource raimundabraham = new RDFResource("http://example.org/artists/47");
+            RDFResource emilioambasz = new RDFResource("http://example.org/artists/141");
+            RDFResource mariobotta = new RDFResource("http://example.org/artists/696");
+            RDFResource louisikahn = new RDFResource("http://example.org/artists/2964");
+            RDFResource frederickkiesler = new RDFResource("http://example.org/artists/3091");
+            RDFResource leonkrier = new RDFResource("http://example.org/artists/3250");
+            RDFResource masayukikurokawa = new RDFResource("http://example.org/artists/3308");
+            RDFResource ernestobrunolapadula = new RDFResource("http://example.org/artists/3381");
+            RDFResource richardmeier = new RDFResource("http://example.org/artists/3910");
+            RDFResource eerosaarinen = new RDFResource("http://example.org/artists/5103");
+            RDFResource franklloydwright = new RDFResource("http://example.org/artists/6459");
+            RDFResource evazeisel = new RDFResource("http://example.org/artists/6556");
+            RDFResource zahahadid = new RDFResource("http://example.org/artists/6953");
+            RDFResource santiagocalatrava = new RDFResource("http://example.org/artists/6968");
+            RDFResource tadaoando = new RDFResource("http://example.org/artists/7055");
+            RDFResource ludwigmiesvanderrohe = new RDFResource("http://example.org/artists/7166");
+            RDFResource rafaelviñoly = new RDFResource("http://example.org/artists/7229");
+            RDFResource aldorossi = new RDFResource("http://example.org/artists/7661");
+            RDFResource simonungers = new RDFResource("http://example.org/artists/7992");
+            RDFResource giovanniguerrini = new RDFResource("http://example.org/artists/8157");
+            RDFResource marioromano = new RDFResource("http://example.org/artists/8158");
+            RDFResource thommayne = new RDFResource("http://example.org/artists/8218");
+            RDFResource thomaskinslow = new RDFResource("http://example.org/artists/8248");
+            RDFResource fusogomuindcoltdtokyo = new RDFResource("http://example.org/artists/9029");
+            RDFResource hallchinacoeastliverpooloh = new RDFResource("http://example.org/artists/10013");
+            RDFResource andrewzago = new RDFResource("http://example.org/artists/22884");
+            RDFResource morphosissantamonicaca = new RDFResource("http://example.org/artists/29711");
 
-            RDFResource raimundabraham = new RDFResource("http://moma.org/artists/47");
-            RDFResource emilioambasz = new RDFResource("http://moma.org/artists/141");
-            RDFResource mariobotta = new RDFResource("http://moma.org/artists/696");
-            RDFResource louisikahn = new RDFResource("http://moma.org/artists/2964");
-            RDFResource frederickkiesler = new RDFResource("http://moma.org/artists/3091");
-            RDFResource leonkrier = new RDFResource("http://moma.org/artists/3250");
-            RDFResource masayukikurokawa = new RDFResource("http://moma.org/artists/3308");
-            RDFResource ernestobrunolapadula = new RDFResource("http://moma.org/artists/3381");
-            RDFResource richardmeier = new RDFResource("http://moma.org/artists/3910");
-            RDFResource eerosaarinen = new RDFResource("http://moma.org/artists/5103");
-            RDFResource franklloydwright = new RDFResource("http://moma.org/artists/6459");
-            RDFResource evazeisel = new RDFResource("http://moma.org/artists/6556");
-            RDFResource zahahadid = new RDFResource("http://moma.org/artists/6953");
-            RDFResource santiagocalatrava = new RDFResource("http://moma.org/artists/6968");
-            RDFResource tadaoando = new RDFResource("http://moma.org/artists/7055");
-            RDFResource ludwigmiesvanderrohe = new RDFResource("http://moma.org/artists/7166");
-            RDFResource rafaelviñoly = new RDFResource("http://moma.org/artists/7229");
-            RDFResource aldorossi = new RDFResource("http://moma.org/artists/7661");
-            RDFResource simonungers = new RDFResource("http://moma.org/artists/7992");
-            RDFResource giovanniguerrini = new RDFResource("http://moma.org/artists/8157");
-            RDFResource marioromano = new RDFResource("http://moma.org/artists/8158");
-            RDFResource thommayne = new RDFResource("http://moma.org/artists/8218");
-            RDFResource thomaskinslow = new RDFResource("http://moma.org/artists/8248");
-            RDFResource fusogomuindcoltdtokyo = new RDFResource("http://moma.org/artists/9029");
-            RDFResource hallchinacoeastliverpooloh = new RDFResource("http://moma.org/artists/10013");
-            RDFResource andrewzago = new RDFResource("http://moma.org/artists/22884");
-            RDFResource morphosissantamonicaca = new RDFResource("http://moma.org/artists/29711");
-
-            // Artists(creators): plain literal name
+            // Artists(agents): plain literal name
 
             RDFPlainLiteral aldorossiName = new RDFPlainLiteral("Aldo Rossi");
             RDFPlainLiteral andrewzagoName = new RDFPlainLiteral("Andrew Zago");
@@ -212,18 +213,18 @@ namespace tms_rdf
 
             #region Locations (tgn)
 
-            RDFResource northwales = new RDFResource("http://vocab.getty.edu/tgn/2091433");
-            RDFResource wales = new RDFResource("http://vocab.getty.edu/tgn/7002443");
-            RDFResource berlin = new RDFResource("http://vocab.getty.edu/tgn/7003712");
-            RDFResource newyork = new RDFResource("http://vocab.getty.edu/tgn/7007567");
-            RDFResource edinburgh = new RDFResource("http://vocab.getty.edu/tgn/7009546");
-            RDFResource kiyev = new RDFResource("http://vocab.getty.edu/tgn/7010171");
-            RDFResource london = new RDFResource("http://vocab.getty.edu/tgn/7011781");
-            RDFResource moskva = new RDFResource("http://vocab.getty.edu/tgn/7012974");
-            RDFResource boston = new RDFResource("http://vocab.getty.edu/tgn/7013445");
-            RDFResource detroit = new RDFResource("http://vocab.getty.edu/tgn/7013547");
-            RDFResource longbeach = new RDFResource("http://vocab.getty.edu/tgn/7013905");
-            RDFResource sanfrancisco = new RDFResource("http://vocab.getty.edu/tgn/7014456");
+            RDFResource northwales = new RDFResource("http://vocab.getty.edu/tgn/2091433-place");
+            RDFResource wales = new RDFResource("http://vocab.getty.edu/tgn/7002443-place");
+            RDFResource berlin = new RDFResource("http://vocab.getty.edu/tgn/7003712-place");
+            RDFResource newyork = new RDFResource("http://vocab.getty.edu/tgn/7007567-place");
+            RDFResource edinburgh = new RDFResource("http://vocab.getty.edu/tgn/7009546-place");
+            RDFResource kiyev = new RDFResource("http://vocab.getty.edu/tgn/7010171-place");
+            RDFResource london = new RDFResource("http://vocab.getty.edu/tgn/7011781-place");
+            RDFResource moskva = new RDFResource("http://vocab.getty.edu/tgn/7012974-place");
+            RDFResource boston = new RDFResource("http://vocab.getty.edu/tgn/7013445-place");
+            RDFResource detroit = new RDFResource("http://vocab.getty.edu/tgn/7013547-place");
+            RDFResource longbeach = new RDFResource("http://vocab.getty.edu/tgn/7013905-place");
+            RDFResource sanfrancisco = new RDFResource("http://vocab.getty.edu/tgn/7014456-place");
 
             // Locations (tgn): plain literal name
 
@@ -246,33 +247,33 @@ namespace tms_rdf
 
             // Create triple resources
 
-            RDFTriple aldorossi_type_creator = new RDFTriple(aldorossi, type, creator);
-            RDFTriple andrewzago_type_creator = new RDFTriple(andrewzago, type, creator);
-            RDFTriple eerosaarinen_type_creator = new RDFTriple(eerosaarinen, type, creator);
-            RDFTriple emilioambasz_type_creator = new RDFTriple(emilioambasz, type, creator);
-            RDFTriple ernestobrunolapadula_type_creator = new RDFTriple(ernestobrunolapadula, type, creator);
-            RDFTriple evazeisel_type_creator = new RDFTriple(evazeisel, type, creator);
-            RDFTriple franklloydwright_type_creator = new RDFTriple(franklloydwright, type, creator);
-            RDFTriple frederickkiesler_type_creator = new RDFTriple(frederickkiesler, type, creator);
-            RDFTriple fusogomuindcoltdtokyo_type_creator = new RDFTriple(fusogomuindcoltdtokyo, type, creator);
-            RDFTriple giovanniguerrini_type_creator = new RDFTriple(giovanniguerrini, type, creator);
-            RDFTriple hallchinacoeastliverpooloh_type_creator = new RDFTriple(hallchinacoeastliverpooloh, type, creator);
-            RDFTriple leonkrier_type_creator = new RDFTriple(leonkrier, type, creator);
-            RDFTriple louisikahn_type_creator = new RDFTriple(louisikahn, type, creator);
-            RDFTriple ludwigmiesvanderrohe_type_creator = new RDFTriple(ludwigmiesvanderrohe, type, creator);
-            RDFTriple mariobotta_type_creator = new RDFTriple(mariobotta, type, creator);
-            RDFTriple marioromano_type_creator = new RDFTriple(marioromano, type, creator);
-            RDFTriple masayukikurokawa_type_creator = new RDFTriple(masayukikurokawa, type, creator);
-            RDFTriple morphosissantamonicaca_type_creator = new RDFTriple(morphosissantamonicaca, type, creator);
-            RDFTriple rafaelviñoly_type_creator = new RDFTriple(rafaelviñoly, type, creator);
-            RDFTriple raimundabraham_type_creator = new RDFTriple(raimundabraham, type, creator);
-            RDFTriple richardmeier_type_creator = new RDFTriple(richardmeier, type, creator);
-            RDFTriple santiagocalatrava_type_creator = new RDFTriple(santiagocalatrava, type, creator);
-            RDFTriple simonungers_type_creator = new RDFTriple(simonungers, type, creator);
-            RDFTriple tadaoando_type_creator = new RDFTriple(tadaoando, type, creator);
-            RDFTriple thommayne_type_creator = new RDFTriple(thommayne, type, creator);
-            RDFTriple thomaskinslow_type_creator = new RDFTriple(thomaskinslow, type, creator);
-            RDFTriple zahahadid_type_creator = new RDFTriple(zahahadid, type, creator);
+            RDFTriple aldorossi_type_agent = new RDFTriple(aldorossi, type, agent);
+            RDFTriple andrewzago_type_agent = new RDFTriple(andrewzago, type, agent);
+            RDFTriple eerosaarinen_type_agent = new RDFTriple(eerosaarinen, type, agent);
+            RDFTriple emilioambasz_type_agent = new RDFTriple(emilioambasz, type, agent);
+            RDFTriple ernestobrunolapadula_type_agent = new RDFTriple(ernestobrunolapadula, type, agent);
+            RDFTriple evazeisel_type_agent = new RDFTriple(evazeisel, type, agent);
+            RDFTriple franklloydwright_type_agent = new RDFTriple(franklloydwright, type, agent);
+            RDFTriple frederickkiesler_type_agent = new RDFTriple(frederickkiesler, type, agent);
+            RDFTriple fusogomuindcoltdtokyo_type_agent = new RDFTriple(fusogomuindcoltdtokyo, type, agent);
+            RDFTriple giovanniguerrini_type_agent = new RDFTriple(giovanniguerrini, type, agent);
+            RDFTriple hallchinacoeastliverpooloh_type_agent = new RDFTriple(hallchinacoeastliverpooloh, type, agent);
+            RDFTriple leonkrier_type_agent = new RDFTriple(leonkrier, type, agent);
+            RDFTriple louisikahn_type_agent = new RDFTriple(louisikahn, type, agent);
+            RDFTriple ludwigmiesvanderrohe_type_agent = new RDFTriple(ludwigmiesvanderrohe, type, agent);
+            RDFTriple mariobotta_type_agent = new RDFTriple(mariobotta, type, agent);
+            RDFTriple marioromano_type_agent = new RDFTriple(marioromano, type, agent);
+            RDFTriple masayukikurokawa_type_agent = new RDFTriple(masayukikurokawa, type, agent);
+            RDFTriple morphosissantamonicaca_type_agent = new RDFTriple(morphosissantamonicaca, type, agent);
+            RDFTriple rafaelviñoly_type_agent = new RDFTriple(rafaelviñoly, type, agent);
+            RDFTriple raimundabraham_type_agent = new RDFTriple(raimundabraham, type, agent);
+            RDFTriple richardmeier_type_agent = new RDFTriple(richardmeier, type, agent);
+            RDFTriple santiagocalatrava_type_agent = new RDFTriple(santiagocalatrava, type, agent);
+            RDFTriple simonungers_type_agent = new RDFTriple(simonungers, type, agent);
+            RDFTriple tadaoando_type_agent = new RDFTriple(tadaoando, type, agent);
+            RDFTriple thommayne_type_agent = new RDFTriple(thommayne, type, agent);
+            RDFTriple thomaskinslow_type_agent = new RDFTriple(thomaskinslow, type, agent);
+            RDFTriple zahahadid_type_agent = new RDFTriple(zahahadid, type, agent);
 
             RDFTriple berlin_type_tgn = new RDFTriple(berlin, type, tgn);
             RDFTriple boston_type_tgn = new RDFTriple(boston, type, tgn);
@@ -376,10 +377,10 @@ namespace tms_rdf
 
             m_graph.AddTriple(aldorossi_activeIn_moskva);
             m_graph.AddTriple(aldorossi_name_aldorossiName);
-            m_graph.AddTriple(aldorossi_type_creator);
+            m_graph.AddTriple(aldorossi_type_agent);
             m_graph.AddTriple(andrewzago_activeIn_moskva);
             m_graph.AddTriple(andrewzago_name_andrewzagoName);
-            m_graph.AddTriple(andrewzago_type_creator);
+            m_graph.AddTriple(andrewzago_type_agent);
             m_graph.AddTriple(berlin_name_berlinName);
             m_graph.AddTriple(berlin_type_tgn);
             m_graph.AddTriple(boston_name_bostonName);
@@ -390,38 +391,38 @@ namespace tms_rdf
             m_graph.AddTriple(edinburgh_type_tgn);
             m_graph.AddTriple(eerosaarinen_activeIn_newyork);
             m_graph.AddTriple(eerosaarinen_name_eerosaarinenName);
-            m_graph.AddTriple(eerosaarinen_type_creator);
+            m_graph.AddTriple(eerosaarinen_type_agent);
             m_graph.AddTriple(emilioambasz_activeIn_newyork);
             m_graph.AddTriple(emilioambasz_name_emilioambaszName);
-            m_graph.AddTriple(emilioambasz_type_creator);
+            m_graph.AddTriple(emilioambasz_type_agent);
             m_graph.AddTriple(ernestobrunolapadula_activeIn_newyork);
             m_graph.AddTriple(ernestobrunolapadula_name_ernestobrunolapadulaName);
-            m_graph.AddTriple(ernestobrunolapadula_type_creator);
+            m_graph.AddTriple(ernestobrunolapadula_type_agent);
             m_graph.AddTriple(evazeisel_educatedIn_berlin);
             m_graph.AddTriple(evazeisel_name_evazeiselName);
-            m_graph.AddTriple(evazeisel_type_creator);
+            m_graph.AddTriple(evazeisel_type_agent);
             m_graph.AddTriple(franklloydwright_activeIn_detroit);
             m_graph.AddTriple(franklloydwright_livedIn_moskva);
             m_graph.AddTriple(franklloydwright_name_franklloydwrightName);
-            m_graph.AddTriple(franklloydwright_type_creator);
+            m_graph.AddTriple(franklloydwright_type_agent);
             m_graph.AddTriple(frederickkiesler_livedIn_longbeach);
             m_graph.AddTriple(frederickkiesler_name_frederickkieslerName);
-            m_graph.AddTriple(frederickkiesler_type_creator);
+            m_graph.AddTriple(frederickkiesler_type_agent);
             m_graph.AddTriple(fusogomuindcoltdtokyo_livedIn_london);
             m_graph.AddTriple(fusogomuindcoltdtokyo_name_fusogomuindcoltdtokyoName);
-            m_graph.AddTriple(fusogomuindcoltdtokyo_type_creator);
+            m_graph.AddTriple(fusogomuindcoltdtokyo_type_agent);
             m_graph.AddTriple(giovanniguerrini_activeIn_newyork);
             m_graph.AddTriple(giovanniguerrini_name_giovanniguerriniName);
-            m_graph.AddTriple(giovanniguerrini_type_creator);
+            m_graph.AddTriple(giovanniguerrini_type_agent);
             m_graph.AddTriple(hallchinacoeastliverpooloh_educatedIn_berlin);
             m_graph.AddTriple(hallchinacoeastliverpooloh_name_hallchinacoeastliverpoolohName);
-            m_graph.AddTriple(hallchinacoeastliverpooloh_type_creator);
+            m_graph.AddTriple(hallchinacoeastliverpooloh_type_agent);
             m_graph.AddTriple(kiyev_name_kiyevName);
             m_graph.AddTriple(kiyev_type_tgn);
             m_graph.AddTriple(leonkrier_activeIn_newyork);
             m_graph.AddTriple(leonkrier_educatedIn_london);
             m_graph.AddTriple(leonkrier_name_leonkrierName);
-            m_graph.AddTriple(leonkrier_type_creator);
+            m_graph.AddTriple(leonkrier_type_agent);
             m_graph.AddTriple(london_name_londonName);
             m_graph.AddTriple(london_type_tgn);
             m_graph.AddTriple(longbeach_name_longbeachName);
@@ -429,25 +430,25 @@ namespace tms_rdf
             m_graph.AddTriple(louisikahn_livedIn_longbeach);
             m_graph.AddTriple(louisikahn_livedIn_newyork);
             m_graph.AddTriple(louisikahn_name_louisikahnName);
-            m_graph.AddTriple(louisikahn_type_creator);
+            m_graph.AddTriple(louisikahn_type_agent);
             m_graph.AddTriple(ludwigmiesvanderrohe_activeIn_moskva);
             m_graph.AddTriple(ludwigmiesvanderrohe_livedIn_moskva);
             m_graph.AddTriple(ludwigmiesvanderrohe_name_ludwigmiesvanderroheName);
-            m_graph.AddTriple(ludwigmiesvanderrohe_type_creator);
+            m_graph.AddTriple(ludwigmiesvanderrohe_type_agent);
             m_graph.AddTriple(mariobotta_activeIn_kiyev);
             m_graph.AddTriple(mariobotta_activeIn_moskva);
             m_graph.AddTriple(mariobotta_livedIn_moskva);
             m_graph.AddTriple(mariobotta_name_mariobottaName);
-            m_graph.AddTriple(mariobotta_type_creator);
+            m_graph.AddTriple(mariobotta_type_agent);
             m_graph.AddTriple(marioromano_activeIn_newyork);
             m_graph.AddTriple(marioromano_name_marioromanoName);
-            m_graph.AddTriple(marioromano_type_creator);
+            m_graph.AddTriple(marioromano_type_agent);
             m_graph.AddTriple(masayukikurokawa_livedIn_london);
             m_graph.AddTriple(masayukikurokawa_name_masayukikurokawaName);
-            m_graph.AddTriple(masayukikurokawa_type_creator);
+            m_graph.AddTriple(masayukikurokawa_type_agent);
             m_graph.AddTriple(morphosissantamonicaca_activeIn_moskva);
             m_graph.AddTriple(morphosissantamonicaca_name_morphosissantamonicacaName);
-            m_graph.AddTriple(morphosissantamonicaca_type_creator);
+            m_graph.AddTriple(morphosissantamonicaca_type_agent);
             m_graph.AddTriple(moskva_name_moskvaName);
             m_graph.AddTriple(moskva_type_tgn);
             m_graph.AddTriple(newyork_name_newyorkName);
@@ -456,41 +457,41 @@ namespace tms_rdf
             m_graph.AddTriple(northwales_type_tgn);
             m_graph.AddTriple(rafaelviñoly_activeIn_newyork);
             m_graph.AddTriple(rafaelviñoly_name_rafaelviñolyName);
-            m_graph.AddTriple(rafaelviñoly_type_creator);
+            m_graph.AddTriple(rafaelviñoly_type_agent);
             m_graph.AddTriple(raimundabraham_livedIn_moskva);
             m_graph.AddTriple(raimundabraham_name_raimundabrahamName);
-            m_graph.AddTriple(raimundabraham_type_creator);
+            m_graph.AddTriple(raimundabraham_type_agent);
             m_graph.AddTriple(richardmeier_activeIn_edinburgh);
             m_graph.AddTriple(richardmeier_activeIn_london);
             m_graph.AddTriple(richardmeier_educatedIn_london);
             m_graph.AddTriple(richardmeier_name_richardmeierName);
-            m_graph.AddTriple(richardmeier_type_creator);
+            m_graph.AddTriple(richardmeier_type_agent);
             m_graph.AddTriple(sanfrancisco_name_sanfranciscoName);
             m_graph.AddTriple(sanfrancisco_type_tgn);
             m_graph.AddTriple(santiagocalatrava_livedIn_newyork);
             m_graph.AddTriple(santiagocalatrava_name_santiagocalatravaName);
-            m_graph.AddTriple(santiagocalatrava_type_creator);
+            m_graph.AddTriple(santiagocalatrava_type_agent);
             m_graph.AddTriple(simonungers_livedIn_boston);
             m_graph.AddTriple(simonungers_livedIn_newyork);
             m_graph.AddTriple(simonungers_name_simonungersName);
-            m_graph.AddTriple(simonungers_type_creator);
+            m_graph.AddTriple(simonungers_type_agent);
             m_graph.AddTriple(tadaoando_activeIn_newyork);
             m_graph.AddTriple(tadaoando_livedIn_northwales);
             m_graph.AddTriple(tadaoando_livedIn_wales);
             m_graph.AddTriple(tadaoando_name_tadaoandoName);
-            m_graph.AddTriple(tadaoando_type_creator);
+            m_graph.AddTriple(tadaoando_type_agent);
             m_graph.AddTriple(thomaskinslow_livedIn_boston);
             m_graph.AddTriple(thomaskinslow_livedIn_newyork);
             m_graph.AddTriple(thomaskinslow_name_thomaskinslowName);
-            m_graph.AddTriple(thomaskinslow_type_creator);
+            m_graph.AddTriple(thomaskinslow_type_agent);
             m_graph.AddTriple(thommayne_activeIn_moskva);
             m_graph.AddTriple(thommayne_name_thommayneName);
-            m_graph.AddTriple(thommayne_type_creator);
+            m_graph.AddTriple(thommayne_type_agent);
             m_graph.AddTriple(wales_name_walesName);
             m_graph.AddTriple(wales_type_tgn);
             m_graph.AddTriple(zahahadid_activeIn_sanfrancisco);
             m_graph.AddTriple(zahahadid_name_zahahadidName);
-            m_graph.AddTriple(zahahadid_type_creator);
+            m_graph.AddTriple(zahahadid_type_agent);
 
             #endregion
 

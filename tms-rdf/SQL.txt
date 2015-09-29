@@ -28,7 +28,7 @@ End
 -- Create this view for the demo.
 
  -- SourceTermID is the TGN number that you can reference here:
- -- http://vocab.getty.edu/tgn/{SourceTermID} (for example)
+ -- http://vocab.getty.edu/tgn/{SourceTermID}-place (for example)
  -- This allows you to create a reference uri for the place name
  -- 1=EN, ThesaurusBaseID for TGN is 5.  Change accordingly.
  -- Query is limited to 3 ThesXrefTypeIDs which are Terms in TMSThes
@@ -62,21 +62,21 @@ GROUP BY C.ConstituentID, C.DisplayName, TXT.ThesXrefTypeID, T.Term,TM.SourceTer
 
   -- Add RDF resources
 
-  -- Artists (creators)    
+  -- Artists (agents)    
   
-  SELECT TOP 100 'RDFResource ' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + ' = new RDFResource("http://moma.org/artists/' + CAST([ArtistID] AS VARCHAR(10)) + '");'
+  SELECT TOP 100 'RDFResource ' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + ' = new RDFResource("http://example.org/artists/' + CAST([ArtistID] AS VARCHAR(10)) + '");'
   FROM [TMS-API].[dbo].[vwTmsRdf]
   WHERE ArtistPredicate IS NOT NULL AND Term IS NOT NULL
   GROUP BY [DisplayName], [ArtistID]
   
   -- Locations (TGN)
 
-  SELECT TOP 100 'RDFResource ' + LOWER(dbo.RemoveNonAlphaCharacters(Term)) + ' = new RDFResource("http://vocab.getty.edu/tgn/' + CAST(TGN AS VARCHAR(20)) + '");'
+  SELECT TOP 100 'RDFResource ' + LOWER(dbo.RemoveNonAlphaCharacters(Term)) + ' = new RDFResource("http://vocab.getty.edu/tgn/' + CAST(TGN AS VARCHAR(20)) + '-place");'
   FROM [TMS-API].[dbo].[vwTmsRdf]
   WHERE ArtistPredicate IS NOT NULL AND Term IS NOT NULL
   GROUP BY Term, TGN
   
-  -- Artists (creators): plain literal name
+  -- Artists (agents): plain literal name
         
   SELECT TOP 100 'RDFPlainLiteral ' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + 'Name = new RDFPlainLiteral("' + DisplayName + '");'
   FROM [TMS-API].[dbo].[vwTmsRdf]
@@ -92,7 +92,7 @@ GROUP BY C.ConstituentID, C.DisplayName, TXT.ThesXrefTypeID, T.Term,TM.SourceTer
   
   -- Create triple resources
 
-  SELECT TOP 100 'RDFTriple ' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + '_type_creator = new RDFTriple(' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + ', type, creator);'
+  SELECT TOP 100 'RDFTriple ' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + '_type_agent = new RDFTriple(' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + ', type, agent);'
   FROM [TMS-API].[dbo].[vwTmsRdf]
   WHERE ArtistPredicate IS NOT NULL AND Term IS NOT NULL 
   GROUP BY [DisplayName]
@@ -121,7 +121,7 @@ GROUP BY C.ConstituentID, C.DisplayName, TXT.ThesXrefTypeID, T.Term,TM.SourceTer
   -- Add triples
   -- Need to create a graph called m_graph
 
-  SELECT TOP 100 'm_graph.AddTriple(' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + '_type_creator);'
+  SELECT TOP 100 'm_graph.AddTriple(' + LOWER(dbo.RemoveNonAlphaCharacters([DisplayName])) + '_type_agent);'
   FROM [TMS-API].[dbo].[vwTmsRdf]
   WHERE ArtistPredicate IS NOT NULL AND Term IS NOT NULL 
   GROUP BY DisplayName
