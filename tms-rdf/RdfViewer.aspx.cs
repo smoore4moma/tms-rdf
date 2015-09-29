@@ -510,9 +510,6 @@ namespace tms_rdf
             //RDFGraph tmsNT = RDFSerializer.ReadRDF(RDFModelEnums.RDFFormats.NTriples, Environment.CurrentDirectory + "\\tms.nt");
 
             // Write the RDF into SQL Server.  You have other choices with RDFSharp including RDFMemoryStore
-            // You need to create a blank MSSQL database to hold the data.  The database is specified in the 
-            // connection string, example: 
-            // <add name="RDFConnectionString" connectionString="Data Source=localhost;Initial Catalog=tms-rdf;Integrated Security=True" providerName="System.Data.SqlClient" />
 
             string m_conn = ConfigurationManager.ConnectionStrings["RDFConnectionString"].ConnectionString;
 
